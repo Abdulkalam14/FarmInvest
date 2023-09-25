@@ -4,7 +4,8 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-
+//gray-700 for light gray shade 
+//text-primary-600 for green colour
   theme: {
     extend: {
       colors: {

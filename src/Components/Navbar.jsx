@@ -3,9 +3,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Invest', href: '#', current: false },
-  { name: 'Holdings', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Invest', href: '/#invest', current: false },
+  { name: 'Holdings', href: '/#holds', current: false },
   { name: 'Contact', href: '#', current: false },
 ]
 
@@ -37,7 +37,7 @@ export default function Navbar() {
                   <img
                     className="h-8 w-auto"
                     src="src/assets/icon.png"
-                    alt="Your Company"
+                    alt=""
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

@@ -10,6 +10,7 @@ import Profile from './Pages/Profile';
 import FarmerProfile from './Pages/FarmerProfile';
 import BuyingPage from './Pages/BuyingPage';
 import Choose from './Pages/Choose';
+import OtpVerification from './Pages/OtpVerification';
 function App() {
   return (
     <Routes>
@@ -24,6 +25,7 @@ function App() {
       </Route>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/signup" element={<Signup/>}/>
+      <Route path="/verification" element={<OtpVerification/>}/>
     </Routes>
     
   )

@@ -30,7 +30,7 @@ const Farmerslist = () => {
           <Farmercard key={farmer._id} id={farmer._id} fullName={farmer.fullName} location={farmer.location} area={farmer.area} />
         ))
       ) : (
-        <p>No farmers data available.</p>
+        <p className='text-5xl font-extrabold text-gray-700'>No farmers data available.</p>
       )}
     </div>
   );

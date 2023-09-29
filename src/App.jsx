@@ -19,7 +19,7 @@ function App() {
          <Route path='/holdings' element={<Holdings/>}/>
          <Route path='/farmers' element={<Farmers/>}/>
          <Route path='/profile/:id' element={<Profile/>}/>
-         <Route path='/farmerprofile' element={<FarmerProfile/>}/>
+         <Route path='/farmerprofile/:id' element={<FarmerProfile/>}/>
          <Route path='/checkout' element={<BuyingPage/>}/>
          <Route path='/select' element={<Choose/>}/>
       </Route>

@@ -11,6 +11,7 @@ import FarmerProfile from './Pages/FarmerProfile';
 import BuyingPage from './Pages/BuyingPage';
 import Choose from './Pages/Choose';
 import OtpVerification from './Pages/OtpVerification';
+import Farmersignup from './Pages/FarmerSignup';
 function App() {
   return (
     <Routes>
@@ -25,6 +26,7 @@ function App() {
       </Route>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/signup" element={<Signup/>}/>
+      <Route path='/farmersignup' element={<Farmersignup/>}/>
       <Route path="/verification" element={<OtpVerification/>}/>
     </Routes>
     

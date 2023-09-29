@@ -3,6 +3,7 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 const Signup = () => {
+    const otpflag = "Already Signed Up, Please Verify your Email."
     const [values, setValues] = useState({
         fullName:"",
         phone:"",
@@ -23,6 +24,9 @@ const Signup = () => {
         } catch (error){
           console.log(error);
           toast.error(error.response.data.message);
+          if(error.response.data.message == otpflag){
+            navigate("/verification")
+          }
         }
     }
   return (

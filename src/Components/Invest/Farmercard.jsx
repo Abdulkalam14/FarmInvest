@@ -3,7 +3,7 @@ import React from 'react'
 const Farmercard = (props) => {
   return (
     <div className='w-full h-auto p-4'>
-    <a href={`/farmerprofile/${props.id}`} class="w-full h-[300px] mx-auto flex flex-col border mb-4 border-gray-500 rounded-xl md:flex-row bg-gray-800 hover:bg-gray-700">
+    <a href="/farmerprofile" class="w-full h-[300px] mx-auto flex flex-col border mb-4 border-gray-500 rounded-xl md:flex-row bg-gray-800 hover:bg-gray-700">
         <img class="w-[350px] rounded-xl h-[300px] p-1" src="src/assets/agri.jpg" alt=""/>
         <div class="p-4">
           <div className='flex items-start'>

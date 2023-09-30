@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const OtpVerification = () => {
+  const [values, setValues] = useState({
+    code: "",
+});
+  const navigate = useNavigate()
+  const handleSubmit = async(e) =>{
+    e.preventDefault();
+    try{
+      const response = await axios.post("http://localhost:3000/user/verifyotp", {
+        ...values,
+      });
+      console.log(response);
+      toast.success("Registration Successfull!")
+      navigate("/");
+    } catch (error){
+      console.log(error);
+    }
+}
   return (
     <div>
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden py-12 text-white">
@@ -8,34 +26,19 @@ const OtpVerification = () => {
     <div class="mx-auto flex w-full max-w-md flex-col space-y-10">
       <div class="flex flex-col items-center justify-center text-center space-y-2">
         <div class="font-semibold text-3xl">
-          <p>Email Verification</p>
+          <p>Please verify your email</p>
         </div>
         <div class="flex flex-row text-sm font-medium text-gray-400">
-          <p>We have sent a code to your email</p>
+          <p>We have sent a code to your email </p>
         </div>
       </div>
 
       <div>
-        <form action="" method="post">
+        <form onSubmit={(e)=>handleSubmit(e)} action="" method="post">
           <div class="flex flex-col space-y-10">
             <div class="flex flex-row items-center justify-between mx-auto w-full max-w-xs">
-              <div class="w-12 h-12 ">
-                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-500 focus:bg-gray-900 focus:ring-1 " type="text" name="" id="" maxLength={1}/>
-              </div>
-              <div class="w-12 h-12 ">
-                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-500 focus:bg-gray-900 focus:ring-1 " type="text" name="" id="" maxLength={1}/>
-              </div>
-              <div class="w-12 h-12 ">
-                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-500 focus:bg-gray-900 focus:ring-1 " type="text" name="" id="" maxLength={1}/>
-              </div>
-              <div class="w-12 h-12">
-                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-500 focus:bg-gray-900 focus:ring-1 " type="text" name="" id="" maxLength={1}/>
-              </div>
-              <div class="w-12 h-12 ">
-                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-500 focus:bg-gray-900 focus:ring-1 " type="text" name="" id="" maxLength={1}/>
-              </div>
-              <div class="w-12 h-12 ">
-                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-500 focus:bg-gray-900 focus:ring-1 " type="text" name="" id="" maxLength={1}/>
+              <div class="w-full h-12 ">
+                <input class="font-bold w-full h-full flex  items-center justify-center text-center outline-none rounded-xl border border-gray-200 text-lg bg-gray-800 focus:bg-gray-700 focus:ring-1 " type="text" name="" id="" maxLength={6} onChange={(e)=>setValues({...values, [e.target.name]:e.target.value})} />
               </div>
             </div>
 

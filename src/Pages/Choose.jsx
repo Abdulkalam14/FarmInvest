@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, {Toaster} from 'react-hot-toast';
 import axios from 'axios';
 
 const Choose = () => {
@@ -13,9 +12,6 @@ const Choose = () => {
     const [cost, setCost] = useState(0);
     const [qty,setQty] = useState(0);
     const [price, setPrice] = useState(count*cost)
-    const notify = () => toast.success("Added to cart!", {
-        theme: "colored"
-      })
       const buyNow = async () => {
         try {
           const payload = {
@@ -108,11 +104,9 @@ const Choose = () => {
                     </table>
                 </div>
         </div>
-        <a>
             <button  onClick={buyNow} className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700'>Buy Now</button>     
-            <button  onClick={notify} className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700 ml-2'>Add to cart</button>     
-            <ToastContainer />
-        </a>
+            <button  onClick={()=>{toast.success('Item added to cart!')}} className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700 ml-2'>Add to cart</button>     
+            <Toaster />
     </div>
 </div>
     </div>

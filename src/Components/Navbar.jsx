@@ -94,7 +94,7 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/profile/:id"
                             className={classNames(active ? 'bg-gray-900' : '', 'block px-4 py-2 text-sm text-white')}
                           >
                             Your Profile

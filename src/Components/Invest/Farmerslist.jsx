@@ -24,7 +24,7 @@ const Farmerslist = () => {
   }, []); 
 
   return (
-    <div className='w-full py-12'>
+    <div className='w-full py-12 columns-2'>
       {farmersList.length > 0 ? (
         farmersList.map((farmer) => (
           <Farmercard key={farmer._id} id={farmer._id} fullName={farmer.fullName} location={farmer.location} area={farmer.area} />

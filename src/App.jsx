@@ -6,7 +6,7 @@ import Signin from './Pages/Signin';
 import Signup from './Pages/Signup';
 import Holdings from './Pages/Holdings';
 import Farmers from './Pages/Farmers';
-import Profile from './Pages/Profile';
+import UserProfile from './Pages/UserProfile';
 import FarmerProfile from './Pages/FarmerProfile';
 import BuyingPage from './Pages/BuyingPage';
 import Choose from './Pages/Choose';
@@ -37,7 +37,7 @@ function App() {
         <Route index element={<PrivateRoute component={Home} />} />
         <Route path="/holdings" element={<PrivateRoute component={Holdings} />} />
         <Route path="/farmers" element={<PrivateRoute component={Farmers} />} />
-        <Route path="/profile/:id" element={<PrivateRoute component={Profile} />} />
+        <Route path="/profile/:id" element={<PrivateRoute component={UserProfile} />} />
         <Route path="/farmerprofile/:id" element={<PrivateRoute component={FarmerProfile} />} />
         <Route path="/checkout" element={<PrivateRoute component={BuyingPage} />} />
         <Route path="/select/:id" element={<PrivateRoute component={Choose} />} />;

@@ -11,7 +11,7 @@ const Hero = () => {
             </div>
             <p className='text-gray-300'>Empowering Farmers through Crowdfunded Investment.</p>
             <a href="#invest" >
-            <button  className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700'>Get Started</button>     
+            <button  className='bg-green-500 shadow-4xl w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700'>Get Started</button>     
             </a>
         </div>
     </div>

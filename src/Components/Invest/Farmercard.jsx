@@ -2,9 +2,9 @@ import React from 'react'
 
 const Farmercard = (props) => {
   return (
-    <div className='w-full h-auto p-4'>
-    <a href={`/farmerprofile/${props.id}`} className="w-full h-[300px] mx-auto flex flex-col border mb-4 border-gray-500 rounded-xl md:flex-row bg-gray-800 hover:bg-gray-700">
-        <img className="w-[350px] rounded-xl h-[300px] p-1" src="src/assets/agri.jpg" alt=""/>
+    <div className='w-full h-auto'>
+    <a href={`/farmerprofile/${props.id}`} className="w-full h-[200px] mx-auto flex flex-col border mb-4 border-gray-500 rounded-xl md:flex-row bg-gray-800 hover:bg-gray-700">
+        <img className="w-[250px] rounded-xl h-[200px] p-1" src="src/assets/agri.jpg" alt=""/>
         <div className="p-4">
           <div className='flex items-start'>
             <h5 className="block mb-3 text-3xl font-bold text-gray-900 dark:text-white">{props.fullName}</h5>

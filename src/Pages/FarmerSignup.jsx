@@ -24,21 +24,16 @@ const Farmersignup = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try{
-          const {data} = await axios.post("http://localhost:3000/user/signupfarmer", {
+          const response = await axios.post("http://localhost:3000/user/signupfarmer", {
             ...values,
           }
           );
-          if (data) {
-            if (data.errors) {
-              const { email, password } = data.errors;
-              if (email) generateError(email);
-              else if (password) generateError(password);
-            } else {
-              navigate("/verification");
-            }
-          } 
+          console.log(response);
+          toast.success("Registration Successfull!")
+          navigate("/verification", {state: {key : id}});
+          // navigate("/verification");
         }catch (error){
-            generateError(error);
+            console.log(error);
         }
     }
   return (

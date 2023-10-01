@@ -19,8 +19,10 @@ const Signup = () => {
             ...values,
           });
           console.log(response);
+          console.log(response.data.id);
+          const id = response.data.id;
           toast.success("Registration Successfull!")
-          navigate("/verification");
+          navigate("/verification", {state: {key : id}});
         } catch (error){
           console.log(error);
           toast.error(error.response.data.message);

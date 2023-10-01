@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 const Signin = () => {
+    const otpflag = "Verify your email address by entering the OTP sent to your email"
     const [values, setValues] = useState({
         email:"",
         password:"",
@@ -17,16 +18,17 @@ const Signin = () => {
             ...values,
           }
           );
-          // if (!response.ok) {
-          //   toast.error(response.message);
-          // } else {
-              console.log(response);
-              toast.success("Login successful! Redirecting to Homescreen")
-              navigate("/");
-          // }
+          console.log(response);
+          toast.success("Login successful! Redirecting to Homescreen")
+          navigate("/");
 
         }catch (error){
-            toast.error(error.response.data);
+            toast.error(error.response.data.message)
+            if(error.response.data.message == otpflag){
+                const id = error.response.data.userId;
+                navigate("/verification", {state: {key : id}});
+            }
+            //console.log(error);
         }
     }
   return (

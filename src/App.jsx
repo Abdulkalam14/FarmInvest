@@ -12,6 +12,7 @@ import BuyingPage from './Pages/BuyingPage';
 import Choose from './Pages/Choose';
 import OtpVerification from './Pages/OtpVerification';
 import Farmersignup from './Pages/FarmerSignup';
+import EditProfile from './Pages/EditProfile';
 
 const isAuthenticated = () => {
   const accessToken = localStorage.getItem('accessToken');

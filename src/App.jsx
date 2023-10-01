@@ -39,7 +39,8 @@ function App() {
         <Route path="/profile/:id" element={<PrivateRoute component={Profile} />} />
         <Route path="/farmerprofile/:id" element={<PrivateRoute component={FarmerProfile} />} />
         <Route path="/checkout" element={<PrivateRoute component={BuyingPage} />} />
-        <Route path="/select/:id" element={<PrivateRoute component={Choose} />} />
+        <Route path="/select/:id" element={<PrivateRoute component={Choose} />} />;
+        <Route path='/editprofile' element={<EditProfile/>}/>
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />

@@ -38,14 +38,14 @@ const EditProfile = () => {
         <div class="sm:col-span-4">
           <label for="email" class="block text-sm font-medium leading-6">Email address</label>
           <div class="mt-2">
-            <input id="email" name="email" type="email" autocomplete="email" class="bg-gray-700 block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"/>
+            <input id="email" name="email" type="email" autocomplete="email" class="bg-gray-700 block w-full rounded-md border-0 py-1.5  shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"/>
           </div>
         </div>
 
         <div class="sm:col-span-3">
           <label for="state" class="block text-sm font-medium leading-6">Country</label>
           <div class="mt-2">
-            <select id="state" name="state" autocomplete="state-name" class="bg-gray-700 block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 text-gray-500 ring-inset focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6">
+            <select id="state" name="state" autocomplete="state-name" class="bg-gray-700 block w-full rounded-md border-0 py-1.5  shadow-sm text-gray-500 sm:max-w-xs sm:text-sm sm:leading-6">
               <option>Maharshatra</option>
               <option>Gujarat</option>
               <option>Karnataka</option>
@@ -56,7 +56,7 @@ const EditProfile = () => {
         <div class="col-span-full">
           <label for="street-address" class="block text-sm font-medium leading-6">Street address</label>
           <div class="mt-2">
-            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block bg-gray-700 w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"/>
+            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block bg-gray-700 w-full rounded-md border-0 py-1.5  shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"/>
           </div>
         </div>
 

@@ -1,11 +1,13 @@
 import React, {useState,useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 const Choose = () => {
+    const navigate = useNavigate();
     const {id} = useParams();
+    const iid = localStorage.getItem("userId")
     const [responseData, setResponseData] = useState([]);
     const [count, setCount] = useState(1)
     const [cost, setCost] = useState(0);
@@ -17,7 +19,7 @@ const Choose = () => {
       const buyNow = async () => {
         try {
           const payload = {
-            investorId: id,
+            investorId: iid,
             harvestId: id,
             qty: count,
           };
@@ -28,6 +30,7 @@ const Choose = () => {
     
           if (buyResponse.status === 200) {
             toast.success('Purchase successful!');
+            navigate('/holdings');
           } else {
             throw new Error('Purchase failed');
           }

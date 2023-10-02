@@ -13,8 +13,8 @@ const Holdingcard = (props) => {
             <p className='mb-2 text-gray-400'>Location: <span className='text-gray-500'>{props.location}</span></p>
             <p className='mb-2 text-gray-400'>Quantity: {props.qty}</p>
             <p className='mb-2 text-gray-400'>Amount: <span>₹</span>{props.amount}</p>
-            <p className='mb-2 text-gray-400'>Invested on: <span className='italic text-gray-500'>30th November 2023</span></p>
-            <p className='mb-2 text-gray-400'>Estimated date: <span className='italic text-gray-500'>30th November 2023</span></p>
+            <p className='mb-2 text-gray-400'>Invested on: <span className='italic text-gray-500'>{props.investedOn.toLocaleDateString("en-GB")}</span></p>
+            <p className='mb-2 text-gray-400'>Estimated date: <span className='italic text-gray-500'>{props.expectedOn.toLocaleDateString("en-GB")}</span></p>
           </div>
         </div>
     </a>

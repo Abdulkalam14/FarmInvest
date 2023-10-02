@@ -22,6 +22,7 @@ const Signin = () => {
           localStorage.setItem("accessToken",response.data.accessToken)
           localStorage.setItem("userId",response.data._id)
           localStorage.setItem("email",response.data.email)
+          localStorage.setItem("userType",response.data.userType)
           toast.success("Login successful! Redirecting to Homescreen")
           navigate("/");
 

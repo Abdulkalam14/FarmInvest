@@ -28,11 +28,11 @@ const Holdingslist = () => {
   return (
     <div className='w-full h-auto py-12 '>
     <div className='w-full h-screen grid gap-y-0 gap-x-0 grid-cols-3 '>
-    {responseData ? responseData.map(inv => {
-      return (<Holdingcard crop={inv.harvest.crop} farmer={inv.harvest.farmer.fullName} 
+    {responseData ? responseData.map((inv, index) => {
+      return (<Holdingcard key={index} crop={inv.harvest.crop} farmer={inv.harvest.farmer.fullName} 
         farmerId={inv.harvest.farmer._id} location={inv.harvest.farmer.location} 
-        qty={inv.quantity} amount={inv.amount} investedOn={inv.investmentDate}
-        expectedOn={inv.harvest.expectedHarvestDate}/>)
+        qty={inv.quantity} amount={inv.amount} investedOn={new Date(inv.investmentDate)}
+        expectedOn={new Date(inv.harvest.expectedHarvestDate)}/>)
     })
     :
     ""

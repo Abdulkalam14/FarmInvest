@@ -18,7 +18,7 @@ const Signin = () => {
             ...values,
           }
           );
-          console.log(response);
+          //console.log(response);
           localStorage.setItem("accessToken",response.data.accessToken)
           localStorage.setItem("userId",response.data._id)
           localStorage.setItem("email",response.data.email)

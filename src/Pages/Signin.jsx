@@ -26,6 +26,7 @@ const Signin = () => {
           navigate("/");
 
         }catch (error){
+            console.log(error);
             toast.error(error.response.data.message)
             if(error.response.data.message == otpflag){
                 const id = error.response.data.userId;

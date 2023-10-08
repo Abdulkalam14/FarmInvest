@@ -16,7 +16,7 @@ const {id} = useParams();
       })
       .then((data) => {
         setResponseData(data);
-        //console.log(data);
+        console.log(data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -50,6 +50,9 @@ const {id} = useParams();
                     Quantity Available (kgs)
                 </th>
                 <th scope="col" className="px-6 py-3">
+                    Expected Harvest Date (yyyy-mm-dd)
+                </th>
+                <th scope="col" className="px-6 py-3">
                     Price (₹/kg)
                 </th>
                 <th scope="col" className="px-6 py-3">
@@ -67,6 +70,9 @@ const {id} = useParams();
             </th>
             <td className="px-6 py-4">
                 {harvest.quantity}
+            </td>
+            <td className="px-6 py-4">
+                {harvest.expectedHarvestDate.substring(0,9)}
             </td>
             <td className="px-6 py-4">
                 {harvest.amountPerKg}

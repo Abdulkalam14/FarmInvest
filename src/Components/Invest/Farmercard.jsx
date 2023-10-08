@@ -10,7 +10,7 @@ const Farmercard = (props) => {
             <h5 className="block mb-3 text-3xl font-bold text-gray-900 dark:text-white">{props.fullName}</h5>
           </div>
             <div className='text-start'>
-            <p className="mb-2  font-normal text-gray-700 dark:text-gray-400">Produce: <span className='text-green-500'>Rice, Wheat, Sugarcane</span></p>
+            <p className="mb-2  font-normal text-gray-700 dark:text-gray-400">Produce: <span className='text-green-500'>{props.crops.join(", ")}</span></p>
             <p className='mb-2 text-gray-400'>Location: <span className='text-gray-500'>{props.location}</span></p>
             <p className='mb-2 text-gray-400'>Area of land: <span className='text-gray-500'>{props.area}</span></p>
             </div>

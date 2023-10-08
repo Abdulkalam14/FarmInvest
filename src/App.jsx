@@ -13,6 +13,7 @@ import Choose from './Pages/Choose';
 import OtpVerification from './Pages/OtpVerification';
 import Farmersignup from './Pages/FarmerSignup';
 import EditProfile from './Pages/EditProfile';
+import FarmerForm from './Pages/FarmerForm';
 
 const isAuthenticated = () => {
   const accessToken = localStorage.getItem('accessToken');
@@ -59,6 +60,7 @@ function App() {
         <Route path="/checkout" element={<InvestorRoute component={BuyingPage} />} />
         <Route path="/select/:id" element={<InvestorRoute component={Choose} />} />;
         <Route path='/editprofile' element={<EditProfile/>}/>
+        <Route path='/farmerform' element={<FarmerForm/>}/>
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />

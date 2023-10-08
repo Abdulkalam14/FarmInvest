@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import { ToastContainer, toast } from "react-toastify";
+import toast, {Toaster} from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 const Farmersignup = () => {
+    const otpver = "Already Signed Up, Please Verify your Email."
     const [values, setValues] = useState({
         fullName:"",
         phone:"",
@@ -10,30 +11,33 @@ const Farmersignup = () => {
         password:"",
 
     });
-    const generateError = (error) => toast.error(error);
     const [isSubscribed, setIsSubscribed] = useState(false);
-  const handleChange = event => {
-    if (event.target.checked) {
-      console.log('Checkbox is checked');
-    } else {
-      generateError("Terms and conditions not agreed");
+  const handleChange = (event) => {
+    if (!event.target.checked) {
+      toast.error("Terms and conditions not agreed");
     }
     setIsSubscribed(current => !current);
   };
     const navigate = useNavigate()
     const handleSubmit = async(e) =>{
         e.preventDefault();
-        try{
-          const response = await axios.post("http://localhost:3000/user/signupfarmer", {
-            ...values,
+        if(!isSubscribed){
+          toast.error("Terms and conditions not agreed")
+        }else{
+          try{
+            const response = await axios.post("http://localhost:3000/user/signupfarmer", {
+              ...values,
+            }
+            );
+            const id = response.data.id;
+            toast.success("Registration Successfull!")
+            navigate("/verification", {state: {key : id}});
+          }catch (error){
+              toast.error(error.response.data.message);
+              if(error.response.data.message == otpver){
+                navigate("/signin");
+              }
           }
-          );
-          console.log(response);
-          toast.success("Registration Successfull!")
-          navigate("/verification", {state: {key : id}});
-          // navigate("/verification");
-        }catch (error){
-            console.log(error);
         }
     }
   return (
@@ -74,7 +78,6 @@ const Farmersignup = () => {
                       </div>
                   </div>
                   <button type="submit" disabled={!isSubscribed} class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
-                  <ToastContainer />
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account? <a href="/signin" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                   </p>
@@ -82,7 +85,7 @@ const Farmersignup = () => {
                       Are you an Investor? <a href="/signup" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Apply as a Inverstor</a>
                   </p>
               </form>
-              
+              <Toaster/>
           </div>
       </div>
   </div>

@@ -72,7 +72,7 @@ const {id} = useParams();
                 {harvest.quantity}
             </td>
             <td className="px-6 py-4">
-                {harvest.expectedHarvestDate.substring(0,9)}
+                {harvest.expectedHarvestDate.substring(0,10)}
             </td>
             <td className="px-6 py-4">
                 {harvest.amountPerKg}

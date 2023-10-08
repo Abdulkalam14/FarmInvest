@@ -21,8 +21,25 @@ const isAuthenticated = () => {
 };
 
 // PrivateRoute component to handle protected routes
-const PrivateRoute = ({ component: Component }) => {
+const InvestorRoute = ({ component: Component }) => {
   if (isAuthenticated()) {
+    const type = localStorage.getItem("userType");
+    if(type == "farmer"){
+      return <Navigate to="/" />
+    }
+    return <Component />;
+  } else {
+    // Redirect to the sign-in page if not authenticated
+    return <Navigate to="/signin" />;
+  }
+};
+
+const FarmerRoute = ({ component: Component }) => {
+  if (isAuthenticated()) {
+    const type = localStorage.getItem("userType");
+    if(type == "investor"){
+      return <Navigate to="/" />
+    }
     return <Component />;
   } else {
     // Redirect to the sign-in page if not authenticated
@@ -35,13 +52,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* Use PrivateRoute to protect the specified routes */}
-        <Route index element={<PrivateRoute component={Home} />} />
-        <Route path="/holdings" element={<PrivateRoute component={Holdings} />} />
-        <Route path="/farmers" element={<PrivateRoute component={Farmers} />} />
-        <Route path="/profile/:id" element={<PrivateRoute component={UserProfile} />} />
-        <Route path="/farmerprofile/:id" element={<PrivateRoute component={FarmerProfile} />} />
-        <Route path="/checkout" element={<PrivateRoute component={BuyingPage} />} />
-        <Route path="/select/:id" element={<PrivateRoute component={Choose} />} />;
+        <Route index element={<InvestorRoute component={Home} />} />
+        <Route path="/holdings" element={<InvestorRoute component={Holdings} />} />
+        <Route path="/farmers" element={<InvestorRoute component={Farmers} />} />
+        <Route path="/profile/:id" element={<InvestorRoute component={UserProfile} />} />
+        <Route path="/farmerprofile/:id" element={<InvestorRoute component={FarmerProfile} />} />
+        <Route path="/checkout" element={<InvestorRoute component={BuyingPage} />} />
+        <Route path="/select/:id" element={<InvestorRoute component={Choose} />} />;
         <Route path='/editprofile' element={<EditProfile/>}/>
         <Route path='/farmerform' element={<FarmerForm/>}/>
       </Route>

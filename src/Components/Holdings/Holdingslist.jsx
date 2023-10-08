@@ -35,7 +35,7 @@ const Holdingslist = () => {
         expectedOn={new Date(inv.harvest.expectedHarvestDate)}/>)
     })
     :
-    ""
+    (<h1 className='font-bold text-4xl text-gray-400'>No Investments</h1>)
     }
     </div>
     </div>

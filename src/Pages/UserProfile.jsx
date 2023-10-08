@@ -11,7 +11,22 @@ const UserProfile = () => {
   }, [id])
   return (
     <div className='py-[25px] px-4 mx-auto max-w-screen-xl text-gray-50'>
-       User
+      <div className='flex flex-col items-center'>
+       
+        <div className='mb-5'>
+          {records.image==null? (<img className='w-20 h-20 rounded-lg' src="https://icon-library.com/images/default-user-icon/default-user-icon-8.jpg" alt="" />)
+          : (<img className='w-20 h-20 rounded-lg' src={records.image} alt="" />)  
+        }
+          
+        </div>
+        <div>
+          <h1 className='text-2xl font-bold mb-3'>{records.fullName}</h1>
+        </div>
+        <div>
+          <h1 className='mb-2'>Email: <span>{records.email}</span></h1> 
+          <h1 className='mb-2'>Phone: <span>+91 </span><span>{records.phone}</span></h1>         
+        </div>
+      </div>
 
       <div class="mt-6 flex items-center justify-end gap-x-6">
       <a href="/editprofile">

@@ -3,8 +3,10 @@ import toast, {Toaster} from 'react-hot-toast'
 import Items from '../Components/Cart/Items'
 import CartSummary from '../Components/Cart/CartSummary'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const BuyingPage = () => {
+  const navigate = useNavigate();
   const product = "Rice"
   const price = 1000
   const quantity = 5
@@ -37,7 +39,7 @@ const BuyingPage = () => {
   const deleteFromCart = async(e,id) => {
     try{
         const response = await axios.delete(`http://localhost:3000/user/removeFromCart/${id}`)
-        if(response.ok){
+        if(response.status === 200){
             toast.success(response.data.message);
             location.reload();
         }
@@ -47,6 +49,20 @@ const BuyingPage = () => {
         console.log(err)
     }
 }
+
+  const checkout = async() => {
+    try{
+      const response = await axios.post('http://localhost:3000/user/checkout',items)
+      console.log(response)
+      if(response.status === 200){
+        toast.success(response.data.message);
+        navigate('/holdings')
+      }
+    } catch(err){
+      console.log(err);
+      toast.error('Something went wrong')
+    }
+  }
 
   const totalAmount = items.reduce((accumulator, item) => {
     const amount = item.quantity * item.harvestId.amountPerKg;
@@ -81,7 +97,7 @@ const BuyingPage = () => {
                 </div>
             </div>
             <div class="md:w-1/4">
-               <CartSummary totalAmount={totalAmount}/> 
+               <CartSummary totalAmount={totalAmount} checkout={checkout}/> 
             </div>
         </div>
     </div>

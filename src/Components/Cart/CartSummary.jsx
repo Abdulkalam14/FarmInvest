@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const CartSummary = ({totalAmount}) => {
+const CartSummary = ({totalAmount,checkout}) => {
     const taxRate = 0.15;
     const ship = totalAmount?100:0;
   return (
@@ -24,7 +24,7 @@ const CartSummary = ({totalAmount}) => {
                 <span class="font-semibold">Total (₹)</span>
                 <span class="font-semibold">{(Number(totalAmount) + Number(ship) + Number((totalAmount * taxRate))).toFixed(2)}</span>
             </div>
-        <button class="bg-green-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+        <button onClick={(e) => {checkout();}} class="bg-green-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
     </div>
   )
 }

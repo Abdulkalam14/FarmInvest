@@ -15,6 +15,7 @@ import Farmersignup from './Pages/FarmerSignup';
 import EditProfile from './Pages/EditProfile';
 import FarmerForm from './Pages/FarmerForm';
 import SearchHarvest from './Pages/SearchHarvest';
+import FarmerHome from './Pages/FarmerHome';
 
 const isAuthenticated = () => {
   const accessToken = localStorage.getItem('accessToken');
@@ -62,8 +63,9 @@ function App() {
         <Route path="/select/:id" element={<InvestorRoute component={Choose} />} />
         <Route path="/searcharvest" element={<InvestorRoute component={SearchHarvest} />} />
         <Route path='/editprofile' element={<EditProfile/>}/>
-        <Route path='/farmerform' element={<FarmerForm/>}/>
       </Route>
+      <Route path='/farmerform' element={<FarmerForm/>}/>
+      <Route path='/home' element={<FarmerHome/>}/>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/farmersignup" element={<Farmersignup />} />

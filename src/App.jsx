@@ -27,7 +27,7 @@ const InvestorRoute = ({ component: Component }) => {
   if (isAuthenticated()) {
     const type = localStorage.getItem("userType");
     if(type == "farmer"){
-      return <Navigate to="/" />
+      return <Navigate to="/home" />
     }
     return <Component />;
   } else {
@@ -64,8 +64,8 @@ function App() {
         <Route path="/searcharvest" element={<InvestorRoute component={SearchHarvest} />} />
         <Route path='/editprofile' element={<EditProfile/>}/>
       </Route>
-      <Route path='/farmerform' element={<FarmerForm/>}/>
-      <Route path='/home' element={<FarmerHome/>}/>
+      <Route path='/farmerform' element={<FarmerRoute component={FarmerForm} />}/>
+      <Route path='/home' element={<FarmerRoute component={FarmerHome} />}/>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/farmersignup" element={<Farmersignup />} />

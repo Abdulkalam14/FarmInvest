@@ -13,6 +13,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+const signOut = () =>{
+  localStorage.clear();
+  location.reload();
+}
 export default function Navbar() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -76,7 +80,7 @@ export default function Navbar() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="https://icon-library.com/images/default-user-icon/default-user-icon-8.jpg"
                         alt=""
                       />
                     </Menu.Button>
@@ -103,12 +107,13 @@ export default function Navbar() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-900' : '', 'block px-4 py-2 text-sm text-white')}
+                          <button
+                            type='submit'
+                            onClick={signOut}
+                            className={classNames(active ? 'text-start bg-gray-900 w-full' : '', 'w-full block text-start px-4 py-2 text-sm text-white')}
                           >
                             Sign out
-                          </a>
+                          </button>
                         )}
                       </Menu.Item>
                     </Menu.Items>

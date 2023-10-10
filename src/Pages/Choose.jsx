@@ -28,13 +28,34 @@ const Choose = () => {
             toast.success('Purchase successful!');
             navigate('/holdings');
           } else {
-            throw new Error('Purchase failed');
+            toast.error("Purchase failed")
+            throw new Error('Purchase failed')
           }
         } catch (error) {
           console.error('Error:', error);
           toast.error('Error making the purchase.');
         }
       };
+      const addToCart = async() =>{
+        try{
+          const payload = {
+            investorId: iid,
+            harvestId: id,
+            qty: count,
+          };
+          const addToCartApiUrl = 'http://localhost:3000/user/addToCart';
+          const addToCartResponse = await axios.post(addToCartApiUrl, payload);
+          if (addToCartResponse.status === 200) {
+            toast.success("Item Added To Cart!");
+          } else {
+            toast.error("Purchase failed")
+            throw new Error('Purchase failed')
+          } 
+        }catch(error) {
+          console.error('Error:', error);
+          toast.error('Error making the purchase.');
+        }
+      }
       useEffect(() => {
         const apiUrl = `http://localhost:3000/harvest/getHarvestById/${id}`; 
     
@@ -105,7 +126,7 @@ const Choose = () => {
                 </div>
         </div>
             <button  onClick={buyNow} className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700'>Buy Now</button>     
-            <button  onClick={()=>{toast.success('Item added to cart!')}} className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700 ml-2'>Add to cart</button>     
+            <button  onClick={addToCart} className='bg-green-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 hover:bg-green-700 ml-2'>Add to cart</button>     
             <Toaster />
     </div>
 </div>

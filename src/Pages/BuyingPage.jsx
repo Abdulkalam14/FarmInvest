@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import toast, {Toaster} from 'react-hot-toast'
+import Items from '../Components/Cart/Items'
+import CartSummary from '../Components/Cart/CartSummary'
+import axios from 'axios';
 
 const BuyingPage = () => {
   const product = "Rice"
@@ -8,6 +12,47 @@ const BuyingPage = () => {
   const ship = 250;
   const total = price*quantity
   const final = total + taxes + ship
+  const [items,setItems] = useState([]);
+
+  useEffect(() => {
+    const id = localStorage.getItem("userId")
+    const apiUrl = `http://localhost:3000/user/getCartItems/${id}`; 
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          toast.error(response?.data?.message)
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setItems(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  const deleteFromCart = async(e,id) => {
+    try{
+        const response = await axios.delete(`http://localhost:3000/user/removeFromCart/${id}`)
+        if(response.ok){
+            toast.success(response.data.message);
+            location.reload();
+        }
+        toast.error(response.data.message);
+
+    } catch(err){
+        console.log(err)
+    }
+}
+
+  const totalAmount = items.reduce((accumulator, item) => {
+    const amount = item.quantity * item.harvestId.amountPerKg;
+    return accumulator + amount;
+  }, 0);
+
   return (
     <div>
     <div class="py-[25px] px-4 mx-auto max-w-screen-xl text-gray-50">
@@ -17,56 +62,26 @@ const BuyingPage = () => {
             <div class="md:w-3/4">
                 <div class="bg-gray-700 rounded-lg shadow-md p-6 mb-4">
                     <table class="w-full">
-                        <thead>
-                            <tr>
+                        <thead className='mb-2 border-b-2 border-gray-400'>
+                            <tr className='py-5'>
                                 <th class="text-left font-semibold">Product</th>
                                 <th class="text-left font-semibold">Price</th>
                                 <th class="text-left font-semibold">Quantity (kgs)</th>
                                 <th class="text-left font-semibold">Total (₹)</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="py-4">
-                                    <div class="flex items-center">
-                                        <span class="font-semibold">{product}</span>
-                                    </div>
-                                </td>
-                                <td class="py-4">{price}</td>
-                                <td class="py-4">
-                                    <div class="flex items-center">
-                                        <span class="text-center w-8">{quantity}</span>
-                                    </div>
-                                </td>
-                                <td class="py-4">{total}</td>
-                            </tr>
-                            {/* <!-- More product rows --> */}
-                        </tbody>
+                        {items?
+                        items.map((item) => {
+                            return <Items id={item._id} crop={item.harvestId.crop} price={item.harvestId.amountPerKg} 
+                            qty={item.quantity} total={Number(item.harvestId.amountPerKg)*Number(item.quantity)} deleteFromCart={deleteFromCart}/>
+                        })
+                    :
+                    ""}
                     </table>
                 </div>
             </div>
             <div class="md:w-1/4">
-                <div class="bg-gray-700 rounded-lg shadow-md p-6">
-                    <h2 class="text-lg font-semibold mb-4">Summary</h2>
-                    <div class="flex justify-between mb-2">
-                        <span>Subtotal (₹)</span>
-                        <span>{total}</span>
-                    </div>
-                    <div class="flex justify-between mb-2">
-                        <span>Taxes</span>
-                        <span>{taxes}</span>
-                    </div>
-                    <div class="flex justify-between mb-2">
-                        <span>Shipping</span>
-                        <span>{ship}</span>
-                    </div>
-                    <hr class="my-2"/>
-                    <div class="flex justify-between mb-2">
-                        <span class="font-semibold">Total (₹)</span>
-                        <span class="font-semibold">{final}</span>
-                    </div>
-                    <button class="bg-green-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
-                </div>
+               <CartSummary totalAmount={totalAmount}/> 
             </div>
         </div>
     </div>

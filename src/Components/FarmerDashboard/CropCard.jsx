@@ -9,7 +9,7 @@ const CropCard = () => {
                <h5 className="block mb-3 text-3xl font-bold text-gray-900 dark:text-white">Crop: <span>Rice</span></h5>
                </div>
                  <div className='text-start'>
-                <p className="mb-2  font-normal text-gray-700 dark:text-gray-400">Harvest Date: <span className='text-green-500'>crops</span></p>
+                <p className="mb-2  font-normal text-gray-700 dark:text-gray-400">Harvest Date: <span className='text-green-500'>dd/mm/yyyy</span></p>
                 <p className='mb-2 text-gray-400'>Quantity (kgs): <span className='text-gray-500'>20kgs</span></p>
                 <p className='mb-2 text-gray-400'>Demanded Return (₹): <span className='text-gray-500'>8000</span></p>
                 <p className='mb-2 text-gray-400'>Status: {status==="Completed"? <span className='text-green-500'>Completed</span>: 

@@ -9,7 +9,7 @@ const Contactform = () => {
         </div>
         <div className='max-w-[1240px] mx-auto grid md:grid-cols-3 gap-6'>
             <div className='border-solid border-gray-50 h-60 w-60px bg-gray-700 rounded-lg p-5 shadow-2xl'>
-              <h1>Gov Plans</h1>
+              <h1>Pradhan Mantri Fasal Bima Yojana</h1>
               <p className='text-green-500'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eaque inventore, labore a sed cum ipsum ducimus, nisi eos nostrum illum aperiam quia sapiente consequuntur quisquam eligendi. Ullam, dolore tenetur.</p>
             </div>
             <div className='border-solid border-gray-50 h-60 w-60px bg-gray-700 rounded-lg p-5 shadow-2xl'>

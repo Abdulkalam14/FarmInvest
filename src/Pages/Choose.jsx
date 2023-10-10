@@ -99,7 +99,7 @@ const Choose = () => {
                             <tr>
                                 <td className="py-4">
                                     <div className="flex items-center">
-                                        <span className="font-semibold">Rice</span>
+                                        <span className="font-semibold">{responseData.crop}</span>
                                     </div>
                                 </td>
                                 <td className="py-4">{cost}</td>

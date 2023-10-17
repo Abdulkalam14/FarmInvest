@@ -1,4 +1,4 @@
-# ![](https://www.google.com/imgres?imgurl=https%3A%2F%2Fe7.pngegg.com%2Fpngimages%2F586%2F146%2Fpng-clipart-logo-nature-leaf-design-grass-abc-logo.png&tbnid=oh0ErRwhY4jYGM&vet=12ahUKEwjh0r6hzfyBAxUVSmwGHRGVB8cQMygVegUIARCkAQ..i&imgrefurl=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Dleaf%2BLogo&docid=dijGOFQc9zASPM&w=900&h=900&q=leaf%20logo&ved=2ahUKEwjh0r6hzfyBAxUVSmwGHRGVB8cQMygVegUIARCkAQ) AgroInvest
+# <img src="https://i.ibb.co/qrstgTm/Agro-Invest-logo.png" alt="AgroInvest Logo" width="50" />AgroInvest
 
 AgroInvest is an innovative platform that connects passionate investors with dedicated farmers. By leveraging the power of technology, we're transforming the way investments in agriculture are made. Whether you're an investor looking to support farmers or a farmer in need of investment, AgroInvest has got you covered.
 

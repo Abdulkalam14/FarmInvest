@@ -1,6 +1,6 @@
 # <img src="https://i.ibb.co/qrstgTm/Agro-Invest-logo.png" alt="AgroInvest Logo" width="50" />AgroInvest
 
-AgroInvest is an innovative platform that connects passionate investors with dedicated farmers. By leveraging the power of technology, we're transforming the way investments in agriculture are made. Whether you're an investor looking to support farmers or a farmer in need of investment, AgroInvest has got you covered.
+AgroInvest is a platform that connects passionate investors with dedicated farmers. By leveraging the power of technology, we're transforming the way investments in agriculture are made. Whether you're an investor looking to support farmers or a farmer in need of investment, AgroInvest has got you covered.
 
 ## Table of Contents
 

@@ -27,15 +27,17 @@ const Holdingslist = () => {
   }, []);
   return (
     <div className='w-full h-auto py-12 '>
-    <div className='w-full h-screen grid gap-y-0 gap-x-0 grid-cols-3 '>
-    {responseData ? responseData.map((inv, index) => {
+    <div className='w-full h-auto grid gap-y-8 gap-x-0 grid-cols-3 '>
+    {responseData.length>0 ? responseData.map((inv, index) => {
       return (<Holdingcard key={index} crop={inv.harvest.crop} farmer={inv.harvest.farmer.fullName} 
         farmerId={inv.harvest.farmer._id} location={inv.harvest.farmer.location} 
         qty={inv.quantity} amount={inv.amount} investedOn={new Date(inv.investmentDate)}
         expectedOn={new Date(inv.harvest.expectedHarvestDate)}/>)
     })
     :
-    (<h1 className='font-bold text-4xl text-gray-400'>No Investments</h1>)
+    <div className='w-full flex justify-center'>
+    <h1 className='font-bold text-4xl text-gray-700'>No Current Investments</h1>
+    </div>
     }
     </div>
     </div>

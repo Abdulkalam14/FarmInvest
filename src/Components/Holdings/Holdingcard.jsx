@@ -2,7 +2,7 @@ import React from 'react'
 
 const Holdingcard = (props) => {
   return (
-    <div className='w-full h-screen grid gap-y-0 gap-x-0 grid-cols-3 '>
+    <div className='w-full'>
     <a href="/farmerprofile" className='w-[350px] h-[280px] mx-auto flex flex-row border border-gray-500 rounded-xl md:flex-row hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700'>
         <div class="p-4">
           <div className='flex items-start'>

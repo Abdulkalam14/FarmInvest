@@ -26,9 +26,14 @@ const Farmerslist = () => {
   return (
     <div className='w-full py-12 columns-2'>
       {farmersList.length > 0 ? (
-        farmersList.map((farmer) => (
-          <Farmercard key={farmer._id} id={farmer._id} fullName={farmer.fullName} location={farmer.location} area={farmer.area} crops={farmer.crops}/>
-        ))
+        farmersList.map((farmer) => {
+          if(farmer.crops.length > 0){
+            return <Farmercard key={farmer._id} id={farmer._id} fullName={farmer.fullName} location={farmer.location} area={farmer.area} crops={farmer.crops}/>
+          }
+          else{
+            return <></>;
+          }
+      })
       ) : (
         <p className='text-5xl font-extrabold text-gray-700'>No farmers data available.</p>
       )}

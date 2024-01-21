@@ -54,8 +54,4 @@ To get started with AgroInvest, follow these steps:
 5. **Verification (Farmers):** Farmers must apply and get verified to be listed on the platform. Once verified, they can list their crops.
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---

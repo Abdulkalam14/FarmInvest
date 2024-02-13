@@ -6,7 +6,7 @@ AgroInvest is a platform that connects passionate investors with dedicated farme
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Snapshots](snapshots)
+- [Snapshots](#snapshots)
 - [Usage](#usage)
 
 ## Features

@@ -6,8 +6,8 @@ AgroInvest is a platform that connects passionate investors with dedicated farme
 
 - [Features](#features)
 - [Getting Started](#getting-started)
+- [Snapshots](snapshots)
 - [Usage](#usage)
-- [License](#license)
 
 ## Features
 
@@ -24,6 +24,28 @@ AgroInvest is a platform that connects passionate investors with dedicated farme
 - **Crop Management:** Farmers have a dedicated dashboard to manage their crops efficiently.
 
 - **Technological Stack:** AgroInvest is built with React, Tailwind CSS, Node.js, and MongoDB.
+
+## Snapshots:
+#### Sign-in Page
+![Alt text](https://i.postimg.cc/HkFTQRng/Screenshot-from-2024-02-14-00-55-51.png "Sign-In Page")
+
+#### Sign-Up/Register Page
+![Alt text](https://i.postimg.cc/d07p9VXH/Screenshot-from-2024-02-14-00-58-45.png "Sign-Up Page")
+
+#### Home/Landing Page
+![Alt text](https://i.postimg.cc/XY1bnhd5/Screenshot-from-2024-02-14-00-50-10.png "Home Page")
+
+#### View Farmer
+![Alt text](https://i.postimg.cc/XXSdtQ7B/Screenshot-from-2024-02-14-01-02-10.png "View Farmer")
+
+#### Search By Crops
+![Alt text](https://i.postimg.cc/VLmNZxzB/Screenshot-from-2024-02-14-01-00-42.png "Search By Crop Name")
+
+#### Shopping Cart
+![Alt text](https://i.postimg.cc/qR1JCRCm/Screenshot-from-2024-02-14-00-57-36.png "Shopping Cart")
+
+#### View Your Current Investments
+![Alt text](https://i.postimg.cc/9XGkFSZk/Screenshot-from-2024-02-14-01-03-47.png "View Current Investments")
 
 ## Getting Started
 

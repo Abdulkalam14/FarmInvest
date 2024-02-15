@@ -38,7 +38,7 @@ AgroInvest is a platform that connects passionate investors with dedicated farme
 #### View Farmer
 ![Alt text](https://i.postimg.cc/XXSdtQ7B/Screenshot-from-2024-02-14-01-02-10.png "View Farmer")
 
-#### Search By Crops
+#### Search By Crop Name
 ![Alt text](https://i.postimg.cc/VLmNZxzB/Screenshot-from-2024-02-14-01-00-42.png "Search By Crop Name")
 
 #### Shopping Cart

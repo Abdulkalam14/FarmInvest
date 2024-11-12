@@ -61,7 +61,7 @@ AgroInvest is a platform that connects passionate investors with dedicated farme
 
 To get started with AgroInvest, follow these steps:
 
-1. **Installation:** Clone this repository to your local machine. Clone the backend repository - [AgroInvest- Backend](https://github.com/aniketxpawar/AgroInvest.git)
+1. **Installation:** Clone this repository to your local machine. Clone the backend repository - [FarmInvest- Backend](https://github.com/Abdulkalam14/FarmInvest-Backend.git)
 
 2. **Configuration:** Set up your environment variables and database connections in the relevant files.
 
